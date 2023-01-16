@@ -9,7 +9,7 @@ let opcionesI = [];
 
 function preload() {
 	for (let i = 0; i < NA; i++) {
-		azulejos[i] = loadImage(`azulejos/tile${i}.png`);
+		azulejos[i] = loadImage(`azulejos/${fileName}${i}${fileExtension}`);
 	}
 }
 
