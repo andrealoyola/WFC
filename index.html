@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>wfc</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Diseño de personajes aleatorios</title>
 		<style>
-			html,
 			body {
-				height: 100%;
+				font-family: 'Courier New', Courier, monospace;
+				padding: 2rem;
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
+			}
+			a {
+				display: block;
+				padding: 2rem;
+				box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+				transition: all 0.3s ease;
+				border-radius: 1rem;
+				text-decoration: none;
+				color: #999;
 			}
 
-			body {
-				margin: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				font-family: 'Courier New', Courier, monospace;
+			a:hover,
+			a:active {
+				transform: scale(1.1);
 			}
 		</style>
 	</head>
-
-	<body></body>
-	<h1>haz click para reiniciar</h1>
-
-	<!-- import the javascript library file(s) -->
-	<script
-		src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"
-		crossorigin="anonymous"
-	></script>
-
-	<!-- import the javascript sketch file -->
-	<script src="./sketch.js"></script>
+	<body>
+		<a href="./René Martínez/">
+			<h1>René Martínez</h1>
+		</a>
+		<a href="./Anastaciya Batura/">
+			<h1>Anastaciya Batura</h1>
+		</a>
+		<a href="./René Martínez/">
+			<h1>René Martínez</h1>
+		</a>
+		<a href="./René Martínez/">
+			<h1>René Martínez</h1>
+		</a>
+		<a href="./René Martínez/">
+			<h1>René Martínez</h1>
+		</a>
+		<a href="./René Martínez/">
+			<h1>René Martínez</h1>
+		</a>
+	</body>
 </html>
