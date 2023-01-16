@@ -4,7 +4,7 @@ let ancho; //altura de celda
 let alto; //anchura de celda
 
 const azulejos = [];
-const NA = 11; // número de azulejos
+const NA = 3; // número de azulejos
 
 let opcionesI = [];
 
@@ -122,8 +122,11 @@ function setup() {
 }
 
 function draw() {
-	background(111);
-	const celdasDisponibles = celdas.filter((celda) => {
+	const celdasConOpciones = celdas.filter((celda) => {
+		return celda.opciones.length > 0;
+	});
+
+	const celdasDisponibles = celdasConOpciones.filter((celda) => {
 		return celda.colapsada == false;
 	});
 	if (celdasDisponibles.length > 0) {
@@ -149,6 +152,27 @@ function draw() {
 			for (let y = 0; y < RETICULA; y++) {
 				const celdaIndex = x + y * RETICULA;
 				const celdaActual = celdas[celdaIndex];
+
+				// Este código es para dibujar las celdas sin opciones
+				if (celdaActual.opciones.length < 1) {
+					fill(255, 180, 180);
+					stroke(180, 0, 0);
+					strokeWeight(2);
+					rect(x * ancho, y * alto, ancho, alto);
+					line(
+						x * ancho,
+						y * alto,
+						x * ancho + ancho,
+						y * ancho + alto
+					);
+					line(
+						x * ancho,
+						y * ancho + alto,
+						x * ancho + ancho,
+						y * alto
+					);
+				}
+
 				if (celdaActual.colapsada) {
 					const indiceDeAzulejo = celdaActual.opciones[0];
 					const reglasActuales = reglas[indiceDeAzulejo];
@@ -215,13 +239,6 @@ function draw() {
 			}
 		}
 		// noLoop();
-	} else {
-		for (let i = 0; i < RETICULA * RETICULA; i++) {
-			celdas[i] = {
-				colapsada: false,
-				opciones: opcionesI,
-			};
-		}
 	}
 }
 
@@ -235,4 +252,15 @@ function cambiarEntropia(_celda, _regla, _opuesta) {
 	}
 	_celda.opciones = nuevasOpciones;
 	print(nuevasOpciones);
+}
+
+function mouseClicked() {
+	background(255);
+
+	for (let i = 0; i < RETICULA * RETICULA; i++) {
+		celdas[i] = {
+			colapsada: false,
+			opciones: opcionesI,
+		};
+	}
 }
