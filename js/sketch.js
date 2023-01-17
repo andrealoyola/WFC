@@ -1,5 +1,5 @@
 const celdas = [];
-const RETICULA = 10;
+const RETICULA = 8;
 let ancho; //altura de celda
 let alto; //anchura de celda
 
@@ -9,12 +9,12 @@ let opcionesI = [];
 
 function preload() {
 	for (let i = 0; i < NA; i++) {
-		azulejos[i] = loadImage(`azulejos/tile${i}.png`);
+		azulejos[i] = loadImage(`azulejos/${imageNames}${i}${imageExtension}`);
 	}
 }
 
 function setup() {
-	createCanvas(1080, 1080);
+	createCanvas(windowWidth * 0.8, windowWidth * 0.8);
 
 	ancho = width / RETICULA;
 	alto = height / RETICULA;
@@ -64,8 +64,6 @@ function draw() {
 		const opcionSeleccionada = random(celdaSeleccionada.opciones);
 		celdaSeleccionada.opciones = [opcionSeleccionada];
 
-		// print(celdaSeleccionada);
-
 		for (let x = 0; x < RETICULA; x++) {
 			for (let y = 0; y < RETICULA; y++) {
 				const celdaIndex = x + y * RETICULA;
@@ -94,7 +92,6 @@ function draw() {
 				if (celdaActual.colapsada) {
 					const indiceDeAzulejo = celdaActual.opciones[0];
 					const reglasActuales = reglas[indiceDeAzulejo];
-					// print(reglasActuales);
 					image(
 						azulejos[indiceDeAzulejo],
 						x * ancho,
@@ -169,7 +166,6 @@ function cambiarEntropia(_celda, _regla, _opuesta) {
 		}
 	}
 	_celda.opciones = nuevasOpciones;
-	print(nuevasOpciones);
 }
 
 function mouseClicked() {
