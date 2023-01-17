@@ -1,5 +1,9 @@
 const celdas = [];
+<<<<<<< HEAD
 const RETICULA = 8;
+=======
+const RETICULA = 12;
+>>>>>>> main
 let ancho; //altura de celda
 let alto; //anchura de celda
 
@@ -9,12 +13,20 @@ let opcionesI = [];
 
 function preload() {
 	for (let i = 0; i < NA; i++) {
+<<<<<<< HEAD
 		azulejos[i] = loadImage(`azulejos/${imageNames}${i}${imageExtension}`);
+=======
+		azulejos[i] = loadImage(`azulejos/${fileName}${i}${fileExtension}`);
+>>>>>>> main
 	}
 }
 
 function setup() {
+<<<<<<< HEAD
 	createCanvas(windowWidth * 0.8, windowWidth * 0.8);
+=======
+	createCanvas(2000, 2000);
+>>>>>>> main
 
 	ancho = width / RETICULA;
 	alto = height / RETICULA;
