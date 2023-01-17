@@ -1,9 +1,5 @@
 const celdas = [];
-<<<<<<< HEAD
-const RETICULA = 8;
-=======
-const RETICULA = 12;
->>>>>>> main
+const RETICULA = 10;
 let ancho; //altura de celda
 let alto; //anchura de celda
 
@@ -13,24 +9,19 @@ let opcionesI = [];
 
 function preload() {
 	for (let i = 0; i < NA; i++) {
-<<<<<<< HEAD
-		azulejos[i] = loadImage(`azulejos/${imageNames}${i}${imageExtension}`);
-=======
 		azulejos[i] = loadImage(`azulejos/${fileName}${i}${fileExtension}`);
->>>>>>> main
 	}
 }
 
 function setup() {
-<<<<<<< HEAD
-	createCanvas(windowWidth * 0.8, windowWidth * 0.8);
-=======
-	createCanvas(2000, 2000);
->>>>>>> main
+	createCanvas(windowHeight * 0.8, windowHeight * 0.8);
 
 	ancho = width / RETICULA;
 	alto = height / RETICULA;
+	resetCels();
+}
 
+function resetCels() {
 	for (let i = 0; i < azulejos.length; i++) {
 		opcionesI.push(i);
 	}
@@ -38,17 +29,42 @@ function setup() {
 	for (let i = 0; i < RETICULA * RETICULA; i++) {
 		celdas[i] = {
 			colapsada: false,
-			opciones: opcionesI,
+			opciones: [...opcionesI],
 		};
 	}
-	// celdas[8].colapsada = true;
-	// celdas[3].colapsada = true;
 
-	// celdas[12].opciones = [5, 6, 8];
-	// celdas[4].opciones = [4, 7, 12];
-	// celdas[6].opciones = [9, 7, 12];
-	// celdas[1].opciones = [6, 4, 8, 10];
-	// celdas[5].opciones = [11, 6, 4, 8, 10];
+	// esta sección verifica si la celda está en algun
+	// borde de la pantalla pa asignar solo las opciones
+	// que tengan un cero el borde
+	for (let x = 0; x < RETICULA; x++) {
+		for (let y = 0; y < RETICULA; y++) {
+			const celdaIndex = x + y * RETICULA;
+			const celdaActual = celdas[celdaIndex];
+
+			if (x == 0) {
+				checkBorder(celdaActual, 'LEFT');
+			} else if (x == RETICULA - 1) {
+				checkBorder(celdaActual, 'RIGHT');
+			}
+
+			if (y == 0) {
+				checkBorder(celdaActual, 'UP');
+			} else if (y == RETICULA - 1) {
+				checkBorder(celdaActual, 'DOWN');
+			}
+		}
+	}
+}
+
+function checkBorder(_celda, _regla) {
+	const nuevasOpciones = [];
+	for (let i = 0; i < _celda.opciones.length; i++) {
+		if (reglas[_celda.opciones[i]][_regla] == 0) {
+			const celdaCompatible = _celda.opciones[i];
+			nuevasOpciones.push(celdaCompatible);
+		}
+	}
+	_celda.opciones = nuevasOpciones;
 }
 
 function draw() {
@@ -101,6 +117,7 @@ function draw() {
 					);
 				}
 
+				// esta sección busca y ubica la celda colapsada actual.
 				if (celdaActual.colapsada) {
 					const indiceDeAzulejo = celdaActual.opciones[0];
 					const reglasActuales = reglas[indiceDeAzulejo];
@@ -183,10 +200,5 @@ function cambiarEntropia(_celda, _regla, _opuesta) {
 function mouseClicked() {
 	background(255);
 
-	for (let i = 0; i < RETICULA * RETICULA; i++) {
-		celdas[i] = {
-			colapsada: false,
-			opciones: opcionesI,
-		};
-	}
+	resetCels();
 }

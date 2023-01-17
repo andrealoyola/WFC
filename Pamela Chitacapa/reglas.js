@@ -1,6 +1,6 @@
 const NA = 24; // número de azulejos
-const imageNames = 'tile';
-const imageExtension = '.png.png';
+const fileName = 'tile';
+const fileExtension = '.png.png';
 
 const reglas = [
 	// reglas de los borded de cada azulejo
