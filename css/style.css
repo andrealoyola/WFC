@@ -1,0 +1,32 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Courier New', Courier, monospace;
+}
+#form1 {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+input {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		/* background-color: lightblue; */
+	}
+	#form1 {
+		/* flex-direction: column; */
+		gap: 0rem;
+		flex-wrap: wrap;
+	}
+}
