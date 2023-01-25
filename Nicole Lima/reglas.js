@@ -1,4 +1,4 @@
-const NA = 15; // número de azulejos
+const NA = 25; // número de azulejos
 const fileName = '';
 const fileExtension = '.png';
 
@@ -38,18 +38,18 @@ const reglas = [
 
 	{
 		//4
-		UP: 0,
+		UP: 1,
 		RIGHT: 0,
 		DOWN: 0,
-		LEFT: 0,
+		LEFT: 1,
 	},
 
 	{
 		//5
-		UP: 0,
+		UP: 1,
 		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 0,
+		DOWN: 1,
+		LEFT: 1,
 	},
 
 	{
@@ -135,7 +135,7 @@ const reglas = [
 	{
 		//16
 		UP: 0,
-		RIGHT: 2,
+		RIGHT: 1,
 		DOWN: 0,
 		LEFT: 0,
 	},
@@ -144,8 +144,8 @@ const reglas = [
 		//17
 		UP: 1,
 		RIGHT: 1,
-		DOWN: 1,
-		LEFT: 2,
+		DOWN: 0,
+		LEFT: 1,
 	},
 
 	{
@@ -158,8 +158,8 @@ const reglas = [
 
 	{
 		//19
-		UP: 0,
-		RIGHT: 1,
+		UP: 1,
+		RIGHT: 0,
 		DOWN: 0,
 		LEFT: 0,
 	},
@@ -174,9 +174,9 @@ const reglas = [
 
 	{
 		//21
-		UP: 0,
+		UP: 1,
 		RIGHT: 0,
-		DOWN: 1,
+		DOWN: 0,
 		LEFT: 0,
 	},
 
@@ -200,7 +200,7 @@ const reglas = [
 		//24
 		UP: 0,
 		RIGHT: 0,
-		DOWN: 0,
+		DOWN: 1,
 		LEFT: 1,
 	},
 ];

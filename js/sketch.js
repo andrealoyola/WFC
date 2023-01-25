@@ -1,7 +1,11 @@
 const celdas = [];
-const RETICULA = 10;
+let RETICULAX;
+let RETICULAY;
 let ancho; //altura de celda
 let alto; //anchura de celda
+
+const bordes = document.querySelector('#bordes');
+const NL = document.querySelector('#slider');
 
 const azulejos = [];
 
@@ -14,42 +18,51 @@ function preload() {
 }
 
 function setup() {
-	createCanvas(windowHeight * 0.8, windowHeight * 0.8);
+	createCanvas(windowWidth * 0.9, windowHeight * 0.9);
 
-	ancho = width / RETICULA;
-	alto = height / RETICULA;
 	resetCels();
 }
 
 function resetCels() {
+	background(255);
+	RETICULAX = NL.value;
+	ancho = width / RETICULAX;
+	RETICULAY = int(height / ancho);
+	alto = ancho;
+
 	for (let i = 0; i < azulejos.length; i++) {
 		opcionesI.push(i);
 	}
 
-	for (let i = 0; i < RETICULA * RETICULA; i++) {
+	for (let i = 0; i < RETICULAX * RETICULAY; i++) {
 		celdas[i] = {
 			colapsada: false,
 			opciones: [...opcionesI],
 		};
 	}
+	if (bordes.checked) {
+		checkEdges();
+	}
+}
 
+function checkEdges() {
 	// esta sección verifica si la celda está en algun
 	// borde de la pantalla pa asignar solo las opciones
 	// que tengan un cero el borde
-	for (let x = 0; x < RETICULA; x++) {
-		for (let y = 0; y < RETICULA; y++) {
-			const celdaIndex = x + y * RETICULA;
+	for (let x = 0; x < RETICULAX; x++) {
+		for (let y = 0; y < RETICULAY; y++) {
+			const celdaIndex = x + y * RETICULAX;
 			const celdaActual = celdas[celdaIndex];
 
 			if (x == 0) {
 				checkBorder(celdaActual, 'LEFT');
-			} else if (x == RETICULA - 1) {
+			} else if (x == RETICULAX - 1) {
 				checkBorder(celdaActual, 'RIGHT');
 			}
 
 			if (y == 0) {
 				checkBorder(celdaActual, 'UP');
-			} else if (y == RETICULA - 1) {
+			} else if (y == RETICULAY - 1) {
 				checkBorder(celdaActual, 'DOWN');
 			}
 		}
@@ -92,9 +105,9 @@ function draw() {
 		const opcionSeleccionada = random(celdaSeleccionada.opciones);
 		celdaSeleccionada.opciones = [opcionSeleccionada];
 
-		for (let x = 0; x < RETICULA; x++) {
-			for (let y = 0; y < RETICULA; y++) {
-				const celdaIndex = x + y * RETICULA;
+		for (let x = 0; x < RETICULAX; x++) {
+			for (let y = 0; y < RETICULAY; y++) {
+				const celdaIndex = x + y * RETICULAX;
 				const celdaActual = celdas[celdaIndex];
 
 				// Este código es para dibujar las celdas sin opciones
@@ -107,11 +120,11 @@ function draw() {
 						x * ancho,
 						y * alto,
 						x * ancho + ancho,
-						y * ancho + alto
+						y * alto + alto
 					);
 					line(
 						x * ancho,
-						y * ancho + alto,
+						y * alto + alto,
 						x * ancho + ancho,
 						y * alto
 					);
@@ -130,7 +143,7 @@ function draw() {
 					);
 					// Cambiar entropía UP
 					if (y > 0) {
-						const indiceUP = x + (y - 1) * RETICULA;
+						const indiceUP = x + (y - 1) * RETICULAX;
 						const celdaUP = celdas[indiceUP];
 						if (!celdaUP.colapsada) {
 							cambiarEntropia(
@@ -141,8 +154,8 @@ function draw() {
 						}
 					}
 					// Cambiar entropía RIGHT
-					if (x < RETICULA - 1) {
-						const indiceRIGHT = x + 1 + y * RETICULA;
+					if (x < RETICULAX - 1) {
+						const indiceRIGHT = x + 1 + y * RETICULAX;
 						const celdaRIGHT = celdas[indiceRIGHT];
 						if (!celdaRIGHT.colapsada) {
 							cambiarEntropia(
@@ -153,8 +166,8 @@ function draw() {
 						}
 					}
 					// Cambiar entropía DOWN
-					if (y < RETICULA - 1) {
-						const indiceDOWN = x + (y + 1) * RETICULA;
+					if (y < RETICULAY - 1) {
+						const indiceDOWN = x + (y + 1) * RETICULAX;
 						const celdaDOWN = celdas[indiceDOWN];
 						if (!celdaDOWN.colapsada) {
 							cambiarEntropia(
@@ -166,7 +179,7 @@ function draw() {
 					}
 					// Cambiar entropía LEFT
 					if (x > 0) {
-						const indiceLEFT = x - 1 + y * RETICULA;
+						const indiceLEFT = x - 1 + y * RETICULAX;
 						const celdaLEFT = celdas[indiceLEFT];
 						if (!celdaLEFT.colapsada) {
 							cambiarEntropia(
@@ -197,8 +210,8 @@ function cambiarEntropia(_celda, _regla, _opuesta) {
 	_celda.opciones = nuevasOpciones;
 }
 
-function mouseClicked() {
-	background(255);
+// function mouseClicked() {
+// 	background(255);
 
-	resetCels();
-}
+// 	resetCels();
+// }

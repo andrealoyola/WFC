@@ -1,6 +1,7 @@
 const NA = 19; // número de azulejos
-const fileName = 'tile';
-const fileExtension = '.png.png';
+const fileName = 'bocetos plantas_tile';
+const fileExtension = '.png';
+
 const reglas = [
 	// reglas de los borded de cada azulejo
 	{
@@ -49,6 +50,7 @@ const reglas = [
 		// tile 6
 		UP: 0,
 		RIGHT: 2,
+
 		DOWN: 0,
 		LEFT: 0,
 	},
@@ -97,6 +99,7 @@ const reglas = [
 	{
 		// tile 13
 		UP: 0,
+
 		RIGHT: 2,
 		DOWN: 1,
 		LEFT: 0,
@@ -130,7 +133,7 @@ const reglas = [
 		LEFT: 0,
 	},
 	{
-		// tile 1
+		// tile 18
 		UP: 0,
 		RIGHT: 0,
 		DOWN: 0,

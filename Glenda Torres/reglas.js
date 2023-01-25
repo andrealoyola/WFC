@@ -1,8 +1,16 @@
-const NA = 18; // número de azulejos
-const fileName = 'tile';
+const NA = 21; // número de azulejos
+const fileName = 'valdosa-';
 const fileExtension = '.png';
+
 const reglas = [
 	// reglas de los borded de cada azulejo
+	{
+		// tile 0
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
 	{
 		// tile 0
 		UP: 0,
@@ -128,5 +136,26 @@ const reglas = [
 		RIGHT: 0,
 		DOWN: 0,
 		LEFT: 2,
+	},
+	{
+		// tile 18
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 19
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 20
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
 	},
 ];

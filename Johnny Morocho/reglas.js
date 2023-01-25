@@ -1,14 +1,15 @@
 const NA = 18; // número de azulejos
 const fileName = 'tile';
 const fileExtension = '.png';
+
 const reglas = [
 	// reglas de los borded de cada azulejo
 	{
 		// tile 0
-		UP: 1,
+		UP: 0,
 		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 1,
+		DOWN: 1,
+		LEFT: 0,
 	},
 	{
 		// tile 1
