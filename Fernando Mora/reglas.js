@@ -1,11 +1,11 @@
 const NA = 19; // número de azulejos
-const fileName = 'TILE ';
+const fileName = 'Artboard ';
 const fileExtension = '.png';
 
 const reglas = [
 	// reglas de los borded de cada azulejo
 	{
-		//TITLE 0
+		// TITLE 0
 		UP: 0,
 		RIGHT: 1,
 		DOWN: 0,
@@ -41,6 +41,7 @@ const reglas = [
 	},
 	{
 		// TITLE 5
+
 		UP: 2,
 		RIGHT: 0,
 		DOWN: 4,
@@ -78,6 +79,7 @@ const reglas = [
 		// TITLE 10
 		UP: 4,
 		RIGHT: 0,
+
 		DOWN: 0,
 		LEFT: 0,
 	},

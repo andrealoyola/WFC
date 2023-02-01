@@ -1,4 +1,4 @@
-const NA = 28; // número de azulejos
+const NA = 46; // número de azulejos
 const fileName = 'tile';
 const fileExtension = '.png';
 
@@ -198,6 +198,132 @@ const reglas = [
 		UP: 4,
 		RIGHT: 0,
 		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 28
+		UP: 0,
+		RIGHT: 4,
+		DOWN: 0,
+		LEFT: 4,
+	},
+	{
+		// tile 29
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 4,
+	},
+	{
+		// tile 30
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 3,
+		LEFT: 0,
+	},
+	{
+		// tile 31
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// tile 32
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 33
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 34
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 4,
+	},
+	{
+		// tile 35
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// tile 36
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 4,
+	},
+	{
+		// tile 37
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// tile 38
+		UP: 4,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// tile 39
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 3,
+		LEFT: 4,
+	},
+	{
+		// tile 40
+		UP: 0,
+		RIGHT: 4,
+		DOWN: 1,
+		LEFT: 0,
+	},
+	{
+		// tile 41
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 4,
+	},
+	{
+		// tile 42
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 4,
+	},
+	{
+		// tile 43
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// tile 44
+		UP: 1,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 0,
+	},
+	{
+		// tile 45
+		UP: 4,
+		RIGHT: 0,
+		DOWN: 1,
 		LEFT: 0,
 	},
 ];

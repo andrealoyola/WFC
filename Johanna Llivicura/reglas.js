@@ -1,202 +1,203 @@
 const NA = 28; // número de azulejos
-const fileName = 'per-';
+const fileName = 'Pers ';
 const fileExtension = '.png';
+
 const reglas = [
-	// reglas de los borded de cada azulejo
+	// reglas de los bordes de cada azulejo
 	{
-		//per-0
+		// Pers 0
 		UP: 0,
 		RIGHT: 0,
 		DOWN: 0,
 		LEFT: 0,
 	},
 	{
-		//per-01
+		// Pers 1
 		UP: 0,
 		RIGHT: 0,
-		DOWN: 1,
+		DOWN: 2,
 		LEFT: 0,
 	},
 	{
-		//per-02
+		// Pers 2
 		UP: 0,
 		RIGHT: 0,
-		DOWN: 1,
+		DOWN: 2,
 		LEFT: 0,
 	},
 	{
-		//per-03
+		// Pers 3
 		UP: 0,
 		RIGHT: 0,
-		DOWN: 1,
+		DOWN: 2,
 		LEFT: 0,
 	},
 	{
-		//per-04
+		// Pers 4
 		UP: 0,
 		RIGHT: 0,
 		DOWN: 0,
 		LEFT: 2,
 	},
 	{
-		//per-05
-		UP: 1,
+		// Pers 5
+		UP: 2,
 		RIGHT: 2,
-		DOWN: 4,
-		LEFT: 3,
+		DOWN: 3,
+		LEFT: 2,
 	},
 	{
-		//per-06
-		UP: 1,
+		// Pers 6
+		UP: 2,
 		RIGHT: 2,
-		DOWN: 4,
-		LEFT: 3,
+		DOWN: 3,
+		LEFT: 2,
 	},
 	{
-		//per-07
-		UP: 1,
+		// Pers 7
+		UP: 2,
 		RIGHT: 2,
-		DOWN: 4,
-		LEFT: 3,
+		DOWN: 3,
+		LEFT: 2,
 	},
 	{
-		//per-08
-		UP: 7,
+		// Pers 8
+		UP: 2,
 		RIGHT: 2,
-		DOWN: 4,
-		LEFT: 3,
+		DOWN: 2,
+		LEFT: 2,
 	},
 	{
-		//per-09
+		// Pers 9
+		UP: 3,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 0,
+	},
+	{
+		// Pers 10
+		UP: 3,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 0,
+	},
+	{
+		// Pers 11
+		UP: 3,
+		RIGHT: 0,
+		DOWN: 4,
+		LEFT: 0,
+	},
+	{
+		// Pers 12
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 0,
+	},
+	{
+		// Pers 13
 		UP: 4,
 		RIGHT: 0,
-		DOWN: 5,
+		DOWN: 0,
 		LEFT: 0,
 	},
 	{
-		//per-10
+		// Pers 14
 		UP: 4,
 		RIGHT: 0,
-		DOWN: 5,
+		DOWN: 0,
 		LEFT: 0,
 	},
 	{
-		//per-11
+		// Pers 15
 		UP: 4,
 		RIGHT: 0,
-		DOWN: 5,
-		LEFT: 0,
-	},
-	{
-		//per-12
-		UP: 6,
-		RIGHT: 0,
 		DOWN: 0,
 		LEFT: 0,
 	},
 	{
-		//per-13
-		UP: 5,
-		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 0,
-	},
-	{
-		//per-14
-		UP: 5,
-		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 0,
-	},
-	{
-		//per-15
-		UP: 5,
-		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 0,
-	},
-	{
-		//per-16
-		UP: 0,
-		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 3,
-	},
-	{
-		//per-17
-		UP: 6,
-		RIGHT: 3,
-		DOWN: 0,
-		LEFT: 0,
-	},
-	{
-		//per-18
-		UP: 6,
-		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 2,
-	},
-	{
-		//per-19
-		UP: 0,
-		RIGHT: 0,
-		DOWN: 7,
-		LEFT: 0,
-	},
-	{
-		//per-20
-		UP: 0,
-		RIGHT: 3,
-		DOWN: 6,
-		LEFT: 0,
-	},
-	{
-		//per-21
-		UP: 0,
-		RIGHT: 0,
-		DOWN: 6,
-		LEFT: 2,
-	},
-	{
-		//per-22
-		UP: 7,
-		RIGHT: 2,
-		DOWN: 0,
-		LEFT: 3,
-	},
-	{
-		//per-23
+		// Pers 16
 		UP: 0,
 		RIGHT: 2,
 		DOWN: 0,
-		LEFT: 3,
+		LEFT: 0,
 	},
 	{
-		//per-24
-		UP: 6,
-		RIGHT: 0,
+		// Pers 17
+		UP: 2,
+		RIGHT: 2,
 		DOWN: 0,
-		LEFT: 7,
+		LEFT: 0,
 	},
 	{
-		//per-25
-		UP: 0,
+		// Pers 18
+		UP: 2,
 		RIGHT: 0,
-		DOWN: 0,
-		LEFT: 3,
-	},
-	{
-		//per-26
-		UP: 0,
-		RIGHT: 3,
 		DOWN: 0,
 		LEFT: 2,
 	},
 	{
-		//per-27
-		UP: 7,
+		// Pers 19
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// Pers 20
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// Pers 21
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 2,
+	},
+	{
+		// Pers 22
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 0,
+		LEFT: 2,
+	},
+	{
+		// Pers 23
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 0,
+		LEFT: 2,
+	},
+	{
+		// Pers 24
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 2,
+		LEFT: 0,
+	},
+	{
+		// Pers 25
+		UP: 0,
 		RIGHT: 0,
 		DOWN: 0,
-		LEFT: 6,
+		LEFT: 2,
+	},
+	{
+		// Pers 26
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 0,
+		LEFT: 2,
+	},
+	{
+		// Pers 27
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 0,
+		LEFT: 2,
 	},
 ];

@@ -1,4 +1,4 @@
-const NA = 15; // número de azulejos
+const NA = 18; // número de azulejos
 const fileName = 'tile ';
 const fileExtension = '.png';
 

@@ -1,4 +1,4 @@
-const NA = 42; // número de azulejos
+const NA = 47; // número de azulejos
 const fileName = 'tile';
 const fileExtension = '.png';
 const reglas = [
@@ -158,10 +158,10 @@ const reglas = [
 	},
 	{
 		// tile 22
-		UP: 2,
-		RIGHT: 0,
-		DOWN: 2,
-		LEFT: 0,
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 0,
+		LEFT: 2,
 	},
 	{
 		// tile 23
@@ -200,7 +200,7 @@ const reglas = [
 	},
 	{
 		// tile 28
-		UP: 3,
+		UP: 1,
 		RIGHT: 0,
 		DOWN: 2,
 		LEFT: 0,
@@ -295,5 +295,40 @@ const reglas = [
 		RIGHT: 2,
 		DOWN: 3,
 		LEFT: 0,
+	},
+	{
+		// tile 42
+		UP: 1,
+		RIGHT: 2,
+		DOWN: 1,
+		LEFT: 0,
+	},
+	{
+		// tile 43
+		UP: 0,
+		RIGHT: 2,
+		DOWN: 1,
+		LEFT: 2,
+	},
+	{
+		// tile 44
+		UP: 2,
+		RIGHT: 0,
+		DOWN: 1,
+		LEFT: 2,
+	},
+	{
+		// tile 45
+		UP: 2,
+		RIGHT: 2,
+		DOWN: 1,
+		LEFT: 2,
+	},
+	{
+		// tile 46
+		UP: 0,
+		RIGHT: 0,
+		DOWN: 1,
+		LEFT: 2,
 	},
 ];
